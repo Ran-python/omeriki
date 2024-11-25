@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OMERIKI Website">
+    <title>OMERIKI</title>
+    <style>
+        /* General Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1c1c1c; /* Matte black background */
+            color: #ffffff; /* White text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header Text with Rainbow Animation */
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            animation: rainbow-text 4s linear infinite;
+            margin: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Buttons */
+        .nav {
+            margin-top: 20px;
+        }
+
+        .nav button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            background-color: #555; /* Matte black secondary color */
+            color: white;
+            border-radius: 8px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav button:hover {
+            background-color: #777; /* Slightly lighter for hover effect */
+            transform: scale(1.1);
+        }
+
+        /* Page Section - Smooth Fade & Scale Effect */
+        .page {
+            display: none;
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+            padding: 20px;
+            background: #292929; /* Slightly lighter matte black */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Gallery Section for Images */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Styling and Hover Effects for Images */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transform-origin: center;
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .gallery img:hover {
+            transform: rotateY(20deg) scale(1.1); /* Adds hover rotation and zoom */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            filter: brightness(1.3);
+        }
+
+        /* Sources List */
+        .source-list {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .source-list a {
+            text-decoration: none;
+            color: #1e90ff;
+        }
+
+        .source-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes rainbow-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <h1>OMERIKI</h1>
+
+    <!-- Navigation Buttons -->
+    <div class="nav">
+        <button onclick="showPage('page1')">Page 1</button>
+        <button onclick="showPage('page2')">Page 2</button>
+        <button onclick="showPage('page3')">Page 3</button>
+    </div>
+
+    <!-- Page 1 Content -->
+    <div id="page1" class="page active">
+        <h2>Welcome to Page 1</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/id/1011/250/350" alt="Image 1">
+            <img src="https://picsum.photos/id/1025/250/350" alt="Image 2">
+            <img src="https://picsum.photos/id/1035/250/350" alt="Image 3">
+        </div>
+        <div class="source-list">
+            <p>Sources:</p>
+            <ul>
+                <li><a href="https://picsum.photos/id/1011/250/350" target="_blank">Image 1</a></li>
+                <li><a href="https://picsum.photos/id/1025/250/350" target="_blank">Image 2</a></li>
+                <li><a href="https://picsum.photos/id/1035/250/350" target="_blank">Image 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page 2 Content -->
+    <div id="page2" class="page">
+        <h2>Welcome to Page 2</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/id/1040/250/350" alt="Image 4">
+            <img src="https://picsum.photos/id/1052/250/350" alt="Image 5">
+            <img src="https://picsum.photos/id/1068/250/350" alt="Image 6">
+        </div>
+        <div class="source-list">
+            <p>Sources:</p>
+            <ul>
+                <li><a href="https://picsum.photos/id/1040/250/350" target="_blank">Image 4</a></li>
+                <li><a href="https://picsum.photos/id/1052/250/350" target="_blank">Image 5</a></li>
+                <li><a href="https://picsum.photos/id/1068/250/350" target="_blank">Image 6</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page 3 Content -->
+    <div id="page3" class="page">
+        <h2>Welcome to Page 3</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/id/1079/250/350" alt="Image 7">
+            <img src="https://picsum.photos/200/300.webp" alt="Old School Image">
+            <img src="https://picsum.photos/id/870/200/300?grayscale&blur=2" alt="Grayscale Image">
+        </div>
+        <div class="source-list">
+            <p>Sources:</p>
+            <ul>
+                <li><a href="https://picsum.photos/id/1079/250/350" target="_blank">Image 7</a></li>
+                <li><a href="https://picsum.photos/200/300.webp" target="_blank">Old School Image</a></li>
+                <li><a href="https://picsum.photos/id/870/200/300?grayscale&blur=2" target="_blank">Grayscale Image</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        /* Function to Show Selected Page */
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page'); // Get all pages
+            pages.forEach(page => {
+                page.classList.remove('active'); // Hide all pages
+            });
+
+            const selectedPage = document.getElementById(pageId); // Select clicked page
+            selectedPage.classList.add('active'); // Activate the clicked page
+        }
+    </script>
+</body>
+</html>
